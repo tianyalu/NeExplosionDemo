@@ -7,4 +7,4 @@
 3）爆炸结束控件恢复  
 为防止产品需求改变，对粒子效果进行抽取
 ##### 动画展示
-![image]()
+![image](https://github.com/tianyalu/NeExplosionDemo/blob/master/screenshot/show.gif)
