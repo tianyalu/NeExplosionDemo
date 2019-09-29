@@ -106,7 +106,7 @@ public class ExplosionField extends View {
         view.getGlobalVisibleRect(rect);  //得到view相当于整个屏幕的坐标
         int contentTop = ((ViewGroup) getParent()).getTop();
         Rect frame = new Rect();
-        ((Activity) getContext()).getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        ((Activity) getContext()).getWindow().getDecorView().getWindowVisibleDisplayFrame(frame); //除了状态栏外的屏幕显示区域
         int statusBarHeight = frame.top;
         rect.offset(0, -contentTop - statusBarHeight); //去掉状态栏和标题栏高度
         if(rect.width() == 0 || rect.height() == 0) {

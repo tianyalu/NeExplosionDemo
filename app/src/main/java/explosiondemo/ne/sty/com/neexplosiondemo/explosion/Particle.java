@@ -12,9 +12,9 @@ import android.graphics.Paint;
  */
 public abstract class Particle {
     // 属性
-    float cx;
-    float cy;
-    int color;
+    protected float cx;
+    protected float cy;
+    protected int color;
 
     public Particle(float x, float y, int color) {
         cx = x;

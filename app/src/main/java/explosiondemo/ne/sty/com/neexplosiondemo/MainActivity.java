@@ -7,7 +7,8 @@ import android.view.View;
 
 import explosiondemo.ne.sty.com.neexplosiondemo.explosion.ClickCallback;
 import explosiondemo.ne.sty.com.neexplosiondemo.explosion.ExplosionField;
-import explosiondemo.ne.sty.com.neexplosiondemo.explosion.FallingParticleFactory;
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.falling.FallingParticleFactory;
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.upfalling.ExplodeParticleFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,16 +20,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        ExplosionField explosionField = new ExplosionField(this, new FallingParticleFactory());
+        // 先上后下的爆炸动画
+        ExplosionField explosionField = new ExplosionField(this, new ExplodeParticleFactory());
         explosionField.setClickCallback(new ClickCallback() {
             @Override
             public void onClick(View v) {
-                Log.i("sty", "onClick: " +  v.toString() );
+                Log.i("sty", "onClick1: " +  v.toString() );
             }
         });
-        explosionField.addListener(findViewById(R.id.text));
+
         explosionField.addListener(findViewById(R.id.image));
+        explosionField.addListener(findViewById(R.id.iv_windmill));
+
+        // 仅仅下落的爆炸动画
+        explosionField = new ExplosionField(this, new FallingParticleFactory());
+        explosionField.setClickCallback(new ClickCallback() {
+            @Override
+            public void onClick(View v) {
+                Log.i("sty", "onClick2: " +  v.toString() );
+            }
+        });
         explosionField.addListener(findViewById(R.id.layout));
+        explosionField.addListener(findViewById(R.id.text));
     }
 
 

@@ -1,13 +1,16 @@
-package explosiondemo.ne.sty.com.neexplosiondemo.explosion;
+package explosiondemo.ne.sty.com.neexplosiondemo.explosion.falling;
 
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.Particle;
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.ParticleFactory;
 
 /**
  * Created by tian on 2019/9/27.
  */
 
-public class FallingParticleFactory extends ParticleFactory{
+public class FallingParticleFactory extends ParticleFactory {
     public static final int PART_WH = 8; //默认小球宽高
 
     @Override

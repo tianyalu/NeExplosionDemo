@@ -1,9 +1,12 @@
-package explosiondemo.ne.sty.com.neexplosiondemo.explosion;
+package explosiondemo.ne.sty.com.neexplosiondemo.explosion.falling;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.Particle;
+import explosiondemo.ne.sty.com.neexplosiondemo.explosion.falling.FallingParticleFactory;
 
 import static explosiondemo.ne.sty.com.neexplosiondemo.explosion.Utils.RANDOM;
 
@@ -21,6 +24,9 @@ public class FallingParticle extends Particle {
         mBound = bound;
     }
 
+    /**
+     * @param factor 动画完成百分比
+     */
     @Override
     protected void calculate(float factor) {
         cx = cx + factor * RANDOM.nextInt(mBound.width()) * (RANDOM.nextFloat() - 0.5f);
